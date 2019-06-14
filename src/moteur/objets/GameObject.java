@@ -17,24 +17,48 @@ public abstract class GameObject
 		this.nom = nom;
 	}
 	
-	public void deplacer(Direction direction)
+	/**
+	 * Déplace l'objet dans une direction
+	 * @param direction
+	 */
+	public void deplacer(Direction direction, float vitesse)
 	{
 		switch(direction)
 		{
 			case HAUT: 
-				positionY--;
+				positionY -= vitesse;
 				break;
 			case BAS: 
-				positionY++;
+				positionY += vitesse;
 				break;
 			case GAUCHE:
-				positionX--;
+				positionX -= vitesse;
 				break;
 			case DROITE:
-				positionX++;
+				positionX += vitesse;
 				break;
 		}
 	}
 	
+	/**
+	 * Dessine l'objet, doit être override
+	 * @param g
+	 */
 	public void dessiner(Graphics g){}
+	
+	public int get_position_x()
+	{
+		return positionX;
+	}
+	
+	public int get_position_y()
+	{
+		return positionY;
+	}
+	
+	public void set_position(int x, int y)
+	{
+		positionX = x;
+		positionY = y;
+	}
 }

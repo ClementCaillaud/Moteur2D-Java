@@ -1,5 +1,7 @@
 package moteur;
 
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 
 public class Fenetre extends JFrame
@@ -24,5 +26,10 @@ public class Fenetre extends JFrame
 	public void charger_scene(Scene scene)
 	{
 		setContentPane(scene);//On définit le content pane
+	}
+	
+	public void ajouter_key_listener(KeyListener kl)
+	{
+		addKeyListener(kl);
 	}
 }
